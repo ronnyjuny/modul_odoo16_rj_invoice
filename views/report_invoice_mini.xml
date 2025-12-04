@@ -6,7 +6,8 @@
             <t t-foreach="docs" t-as="invoice">
                 <style>
                     @page {
-                        size: 20cm 13.97cm;
+                        <!-- size: 20cm 13.97cm; -->
+                        size: 20cm 27.94cm;
                         margin: 0.4cm;
                     }
                     body {
