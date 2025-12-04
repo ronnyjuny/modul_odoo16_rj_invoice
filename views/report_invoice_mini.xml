@@ -34,11 +34,9 @@
                             <!-- Kiri: Info Perusahaan -->
                             <td style="width: 40%; vertical-align: top;">
                                 <table class="no-border" style="font-size: 11pt;">
-                                    <tr>
-                                        <td style="font-size: 13pt;"><strong><t t-esc="invoice.company_id.name"/></strong></td>
-                                    </tr>
-                                    <tr><td><t t-esc="invoice.company_id.street or ''"/></td></tr>
-                                    <tr><td><t t-esc="invoice.company_id.phone or ''"/></td></tr>
+                                    <div style="font-size: 13pt;"> <strong> <t t-esc="invoice.company_id.name"/> </strong> </div>
+                                    <div><t t-esc="invoice.company_id.street or ''"/></div>
+                                    <div><t t-esc="invoice.company_id.phone or ''"/></div>
                                 </table>
                             </td>
 
@@ -102,7 +100,6 @@
                                     <tr>
                                         <td style="text-align:center;"><t t-esc="index"/></td>
                                         <td>
-                                            <!-- <t t-raw="(line.name or '').replace('\n','&lt;br/&gt;')"/> -->
                                             <t t-raw="(line.product_id and line.product_id.name or line.name or '').replace('\n','&lt;br/&gt;')"/>
                                         </td>
                                         <td style="text-align:center;">
