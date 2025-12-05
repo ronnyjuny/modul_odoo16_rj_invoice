@@ -11,7 +11,8 @@
                         type="action"
                         class="btn-secondary"
                         icon="fa-print"
-                        groups="account.group_account_invoice"/>
+                        groups="account.group_account_invoice"
+                        attrs="{'invisible': [('move_type', '!=', 'out_invoice')]}"/>
             </xpath>
         </field>
     </record>
