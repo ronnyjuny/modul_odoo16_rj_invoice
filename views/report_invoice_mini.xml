@@ -210,25 +210,14 @@
                     <table class="no-border" style="font-size: 11pt;">
                         <tr>
                             <td><strong>Kepada Yth:</strong></td>
-                        </tr>
-
-                        <tr>
                             <td><t t-esc="invoice.partner_id.name or ''"/></td>
-                        </tr>
-
-                        <tr>
                             <td><t t-esc="invoice.partner_id.street or ''"/></td>
-                        </tr>
-
-                        <t t-if="invoice.partner_id.street2">
-                            <tr>
+                        
+                            <t t-if="invoice.partner_id.street2">
                                 <td><t t-esc="invoice.partner_id.street2"/></td>
-                            </tr>
-                        </t>
+                            </t>
 
-                        <!-- City, State, ZIP (dinamis) -->
-                        <t t-if="invoice.partner_id.city or invoice.partner_id.state_id or invoice.partner_id.zip">
-                            <tr>
+                            <t t-if="invoice.partner_id.city or invoice.partner_id.state_id or invoice.partner_id.zip">
                                 <td>
                                     <t t-set="parts" t-value="[
                                         invoice.partner_id.city or '',
@@ -238,21 +227,16 @@
                                     <t t-set="clean_parts" t-value="[p for p in parts if p]"/>
                                     <t t-out="', '.join(clean_parts)"/>
                                 </td>
-                            </tr>
-                        </t>
+                            </t>
 
-                        <t t-if="invoice.partner_id.phone">
-                            <tr>
+                            <t t-if="invoice.partner_id.phone">
                                 <td>Telp. <t t-esc="invoice.partner_id.phone"/></td>
-                            </tr>
-                        </t>
+                            </t>
 
-                        <t t-if="invoice.partner_id.vat">
-                            <tr>
+                            <t t-if="invoice.partner_id.vat">
                                 <td>NPWP: <t t-esc="invoice.partner_id.vat"/></td>
-                            </tr>
-                        </t>
-
+                            </t>
+                        </tr>
                     </table>
 
 
