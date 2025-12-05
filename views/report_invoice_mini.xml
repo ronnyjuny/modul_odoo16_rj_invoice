@@ -348,6 +348,21 @@
                                             </td>
                                         </tr>
                                     </t>
+                                    <t t-if="object.no_seri">
+                                        <tr>
+                                            <td colspan="6">
+                                                No Seri: <t t-esc="object.no_seri"/>
+                                            </td>
+                                        </tr>
+                                    </t>
+
+                                    <t t-if="object.keterangan">
+                                        <tr>
+                                            <td colspan="6">
+                                                Keterangan: <t t-esc="object.keterangan"/>
+                                            </td>
+                                        </tr>
+                                    </t>
                                 </t>
                             </t>
                         </tbody>
