@@ -226,7 +226,7 @@
                     <t t-set="company" t-value="invoice.company_id.name"/>
                     <div style="font-size:9pt; font-family:Consolas, monospace; width:100%;">    
                         <t t-if="company == 'PT. TEGUH JAYA ABADI SENTOSA'">
-                            <table style="width: 100%;">
+                            <div style="width: 100%;">
                                 <tr>
                                     <td style="width:50%; vertical-align: top; text-align:left;">
                                         <div><strong>Rekening Pembayaran Ban Mobil</strong></div>
@@ -241,7 +241,7 @@
                                         <div>BCA: 0272-05-2369</div>
                                     </td>
                                 </tr>
-                            </table>
+                            </div>
                         </t>
 
                         <t t-if="company == 'PT. TEGUH PERKASA KARYA PERDANA'">
