@@ -61,41 +61,6 @@
                                 </t>
                             </td>
                             <td class="no-border" style="width: 50%;">
-                                <t t-if="invoice.company_id.name">
-                                    <div style="font-size: 13pt;">
-                                        <strong><t t-esc="invoice.company_id.name"/></strong>
-                                    </div>
-                                </t>
-
-                                <t t-if="invoice.company_id.street">
-                                    <div><t t-esc="invoice.company_id.street"/></div>
-                                </t>
-
-                                <t t-if="invoice.company_id.street2">
-                                    <div><t t-esc="invoice.company_id.street2"/></div>
-                                </t>
-
-                                <t t-if="invoice.company_id.city or invoice.company_id.state_id">
-                                    <div>
-                                        <t t-esc="'{}, {}'.format(invoice.company_id.city or '', invoice.company_id.state_id.name or '')"/>
-                                    </div>
-                                </t>
-                                <t t-if="invoice.company_id.vat">
-                                    <div>NPWP: <t t-esc="invoice.company_id.vat"/></div>
-                                </t>
-                                <t t-if="invoice.company_id.phone">
-                                    <div>Telp: <t t-esc="invoice.company_id.phone"/></div>
-                                </t>
-                                <t t-if="invoice.company_id.email">
-                                    <div>Email: <t t-esc="invoice.company_id.email"/></div>
-                                </t>
-                            </td>
-                        </tr>
-                    </table>
-                    <hr style="border: 0; border-top: 1px solid #000; margin: 3px 0; width:100%;" />
-                    <table class="no-border" style="margin-bottom: 15px;">
-                        <tr>
-                            <td style="width: 50%; vertical-align: top;">
                                 <div><strong>Kepada Yth:</strong></div>
                                 <div><t t-esc="invoice.partner_id.name or ''"/></div>
                                 <div><t t-esc="invoice.partner_id.street or ''"/></div>
@@ -103,15 +68,6 @@
                                 <t t-if="invoice.partner_id.phone">
                                 <div>Telp. <t t-esc="invoice.partner_id.phone"/></div>
                                 </t>
-                            </td>
-                            <td style="width: 50%; vertical-align: top;">
-                                <!-- <div><strong>Shipping Address:</strong></div>
-                                <div><t t-esc="invoice.partner_id.name or ''"/></div>
-                                <div><t t-esc="invoice.partner_id.street or ''"/></div>
-                                <div><t t-esc="invoice.partner_id.city or ''"/></div>
-                                <t t-if="invoice.partner_id.phone">
-                                <div>Telp. <t t-esc="invoice.partner_id.phone"/></div>
-                                </t> -->
                             </td>
                         </tr>
                     </table>
