@@ -162,50 +162,6 @@
                     </table>
 
                     <hr style="border: 0; border-top: 1px solid #000; margin: 3px 0;" />
-                    <table class="no-border" style="font-size: 11pt; width: 100%;">
-                        <tr>
-                            <!-- Date -->
-                            <td style="width:25%;">Invoice Date: <span t-field="invoice.invoice_date"/></td>
-
-                            <!-- PO -->
-                            <t t-if="invoice.ref">
-                                <td style="width:50%;">PO: <t t-esc="invoice.ref"/></td>
-                            </t>
-
-                            <!-- Term -->
-                            <t t-if="invoice.invoice_payment_term_id">
-                                <td style="width:25%;">Term: 
-                                    <t t-esc="invoice.invoice_payment_term_id.name"/>
-                                </td>
-                            </t>
-                        </tr>
-                    </table>
-
-                    <!-- <table class="no-border" style="font-size: 11pt;">
-                        <div><strong>Kepada Yth:</strong></div>
-                        <div><t t-esc="invoice.partner_id.name or ''"/></div>
-                        <div><t t-esc="invoice.partner_id.street or ''"/></div>
-                        <t t-if="invoice.partner_id.street2">
-                            <div><t t-esc="invoice.partner_id.street2"/></div>
-                        </t>
-                        <t t-if="invoice.partner_id.city or invoice.partner_id.state_id or invoice.partner_id.zip">
-                            <div>
-                                <t t-set="parts" t-value="[
-                                    invoice.partner_id.city or '',
-                                    invoice.partner_id.state_id.name if invoice.partner_id.state_id else '',
-                                    invoice.partner_id.zip or ''
-                                ]"/>
-                                <t t-set="clean_parts" t-value="[p for p in parts if p]"/>
-                                <t t-out="', '.join(clean_parts)"/>
-                            </div>
-                        </t>
-                        <t t-if="invoice.partner_id.phone">
-                            <div>Telp. <t t-esc="invoice.partner_id.phone"/></div>
-                        </t>
-                        <t t-if="invoice.partner_id.vat">
-                            <div>NPWP: <t t-esc="invoice.partner_id.vat"/></div>
-                        </t>
-                    </table> -->
 
                     <table class="no-border" style="font-size: 11pt;">
                         <tr>
@@ -239,7 +195,25 @@
                         </tr>
                     </table>
 
+                    <table class="no-border" style="font-size: 11pt; width: 100%;">
+                        <tr>
+                            <t t-if="invoice.ref">
+                                <td style="width:40%;">PO: <t t-esc="invoice.ref"/></td>
+                            </t>
 
+                            <t t-if="invoice.invoice_payment_term_id">
+                                <td style="width:30%;">Requested By: 
+                                    <t t-esc="invoice.user_request.name or ''"/>
+                                </td>
+                            </t>
+
+                            <t t-if="invoice.invoice_payment_term_id">
+                                <td style="width:30%;">Admin Sales: 
+                                    <t t-esc="invoice.invoice_user_id.name or ''"/>
+                                </td>
+                            </t>
+                        </tr>
+                    </table>
 
                     
 
