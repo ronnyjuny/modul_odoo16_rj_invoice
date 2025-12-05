@@ -136,9 +136,7 @@
                         <tr>
                             <!-- Kolom kiri -->
                             <td style="width: 70%; vertical-align: top;">
-
-                                <!-- REKENING PEMBAYARAN -->
-                                <div style="margin-top:15px; font-size:11pt; font-family:Consolas, monospace;">
+                                <div style="font-size:11pt; font-family:Consolas, monospace;">
                                     <t t-if="invoice.company_id.name == 'PT. TEGUH JAYA ABADI SENTOSA'">
                                         <table class="no-border" style="width: 100%;">
                                             <tr>
