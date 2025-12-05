@@ -58,6 +58,7 @@
                                 </t>
                             </td> -->
                             <td class="no-border" style="width: 60%;">
+
                                 <!-- Nama Perusahaan -->
                                 <t t-if="invoice.company_id.name">
                                     <div style="font-size: 13pt;">
@@ -84,43 +85,56 @@
                                 <t t-if="invoice.company_id.vat">
                                     <div>NPWP: <t t-esc="invoice.company_id.vat"/></div>
                                 </t>
+
+                                <!-- ========================= -->
+                                <!--         CONTACT           -->
+                                <!-- ========================= -->
+
                                 <t t-if="invoice.company_id.name == 'PT. TEGUH PRIMA SENTOSA'">
+
                                     <!-- Samarinda -->
                                     <t t-if="invoice.sale_order_id.sale_order_type_id.name == 'Samarinda'">
                                         <div>
-                                            <t t-out="'{:<35}{:>45}'.format('Telp: 0813-5097-1228', 'Email: adminsalessmd@teguhprimasentosa.com')"/>
+                                            <span>Telp: 0813-5097-1228</span>
+                                            <span style="float:right;">Email: adminsalessmd@teguhprimasentosa.com</span>
                                         </div>
                                     </t>
+
                                     <!-- Balikpapan -->
                                     <t t-elif="invoice.sale_order_id.sale_order_type_id.name == 'Balikpapan'">
                                         <div>
-                                            <t t-out="'{:<35}{:>45}'.format('Telp: 0812-5775-9989', 'Email: adminsalesbpn@teguhprimasentosa.com')"/>
+                                            <span>Telp: 0812-5775-9989</span>
+                                            <span style="float:right;">Email: adminsalesbpn@teguhprimasentosa.com</span>
                                         </div>
                                     </t>
+
                                     <!-- Malinau -->
                                     <t t-elif="invoice.sale_order_id.sale_order_type_id.name == 'Malinau'">
                                         <div>
-                                            <t t-out="'{:<35}{:>45}'.format('Telp: 081349498127', 'Email: adminsalesmal@teguhprimasentosa.com')"/>
+                                            <span>Telp: 081349498127</span>
+                                            <span style="float:right;">Email: adminsalesmal@teguhprimasentosa.com</span>
                                         </div>
                                     </t>
+
                                     <!-- Tarakan -->
                                     <t t-elif="invoice.sale_order_id.sale_order_type_id.name == 'Tarakan'">
                                         <div>
-                                            <t t-out="'{:<35}{:>45}'.format('Telp: 081349498127', 'Email: adminsalesmal@teguhprimasentosa.com')"/>
+                                            <span>Telp: 081349498127</span>
+                                            <span style="float:right;">Email: adminsalesmal@teguhprimasentosa.com</span>
                                         </div>
                                     </t>
-                                    <!-- Default jika type tidak cocok -->
+
+                                    <!-- Default -->
                                     <t t-else="">
                                         <div>
-                                            <t t-out="'{:<50}{:>30}'.format(
-                                                'Telp: {}'.format(invoice.company_id.phone or ''),
-                                                'Email: {}'.format(invoice.company_id.email or '')
-                                            )"/>
+                                            <span>Telp: <t t-esc="invoice.company_id.phone or ''"/></span>
+                                            <span style="float:right;">Email: <t t-esc="invoice.company_id.email or ''"/></span>
                                         </div>
                                     </t>
+
                                 </t>
 
-                                <!-- Jika bukan perusahaan tersebut → gunakan data normal -->
+                                <!-- Jika bukan perusahaan tersebut -->
                                 <t t-else="">
                                     <t t-if="invoice.company_id.phone">
                                         <div>Telp: <t t-esc="invoice.company_id.phone"/></div>
