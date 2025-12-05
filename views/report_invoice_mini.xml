@@ -58,23 +58,17 @@
                                 </t>
                             </td>
                             <td class="no-border" style="width: 40%; vertical-align: top;">
-                                <t t-if="invoice.sale_order_id.sale_order_type_id">
+                                <t t-if="
+                                    invoice.invoice_line_ids 
+                                    and invoice.invoice_line_ids[0].sale_line_ids 
+                                    and invoice.invoice_line_ids[0].sale_line_ids[0].order_id.sale_order_type_id
+                                ">
                                     <div style="font-size: 13pt;">
-                                        <t t-esc="invoice.sale_order_id.sale_order_type_id.name"/>
+                                        <t t-esc="invoice.invoice_line_ids[0].sale_line_ids[0].order_id.sale_order_type_id.name"/>
                                     </div>
                                 </t>
+
                                 <div><strong>Kepada Yth:</strong></div>
-                                <!-- <div><t t-esc="invoice.partner_id.name or ''"/></div>
-                                <div><t t-esc="invoice.partner_id.street or ''"/></div>
-                                <t t-if="invoice.partner_id.street2">
-                                    <div><t t-esc="invoice.partner_id.street2"/></div>
-                                </t>
-                                <t t-if="invoice.partner_id.city">
-                                    <div><t t-esc="invoice.partner_id.city"/></div>
-                                </t>
-                                <t t-if="invoice.partner_id.phone">
-                                <div>Telp. <t t-esc="invoice.partner_id.phone"/></div>
-                                </t> -->
                             </td>
                         </tr>
                     </table>
