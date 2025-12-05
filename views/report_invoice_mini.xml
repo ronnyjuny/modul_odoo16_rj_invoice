@@ -157,11 +157,11 @@
                                         Term: <t t-esc="invoice.invoice_payment_term_id.name"/>  /  Due Date: <t t-esc="invoice.invoice_date_due"/>
                                     </div>
                                 </t>
-                                <t t-if="invoice.invoice_payment_term_id.name">
+                                <!-- <t t-if="invoice.invoice_payment_term_id.name">
                                     <div style="font-size: 11pt;">
                                         Term: <t t-esc="invoice.invoice_payment_term_id.name"/>
                                     </div>
-                                </t>
+                                </t> -->
                             </td>
                         </tr>
                     </table>
