@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <record id="paperformat_invoice_a5_custom" model="report.paperformat">
-        <field name="name">Invoice Custom</field>
+        <field name="name">Custom Print</field>
         <field name="default" eval="False"/>
         <field name="format">custom</field>
         <!-- <field name="page_height">140</field> -->
