@@ -71,15 +71,14 @@
                                 </t>
                             </td>
                             <td style="width: 50%; vertical-align: top;">
-                                <div><strong>Shipping Address:</strong></div>
+                                <!-- <div><strong>Shipping Address:</strong></div>
                                 <div><t t-esc="invoice.partner_id.name or ''"/></div>
                                 <div><t t-esc="invoice.partner_id.street or ''"/></div>
                                 <div><t t-esc="invoice.partner_id.city or ''"/></div>
                                 <t t-if="invoice.partner_id.phone">
                                 <div>Telp. <t t-esc="invoice.partner_id.phone"/></div>
-                                </t>
+                                </t> -->
                             </td>
-
                         </tr>
                     </table>
 
