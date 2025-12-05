@@ -55,11 +55,6 @@
                                     </div>
                                 </t>
 
-                                <!-- NPWP -->
-                                <t t-if="invoice.company_id.vat">
-                                    <div>NPWP: <t t-esc="invoice.company_id.vat"/></div>
-                                </t>
-
                                 <t t-set="order_type" t-value="
                                     invoice.invoice_line_ids
                                     and invoice.invoice_line_ids[0].sale_line_ids
@@ -108,13 +103,17 @@
                                             <span style="float:right;">Email: <t t-esc="invoice.company_id.email or ''"/></span>
                                         </div>
                                     </t>
-
                                 </t>
 
                                 <t t-else="">
                                     <t t-if="invoice.company_id.phone">
                                         <div>Telp: <t t-esc="invoice.company_id.phone"/></div>
                                     </t>
+
+                                    <t t-if="invoice.company_id.vat">
+                                        <div>NPWP: <t t-esc="invoice.company_id.vat"/></div>
+                                    </t>
+
                                     <t t-if="invoice.company_id.email">
                                         <div>Email: <t t-esc="invoice.company_id.email"/></div>
                                     </t>
