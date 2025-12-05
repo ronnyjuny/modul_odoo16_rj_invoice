@@ -36,15 +36,12 @@
                                         <strong><t t-esc="invoice.company_id.name"/></strong>
                                     </div>
                                 </t>
-
                                 <t t-if="invoice.company_id.street">
                                     <div><t t-esc="invoice.company_id.street"/></div>
                                 </t>
-
                                 <t t-if="invoice.company_id.street2">
                                     <div><t t-esc="invoice.company_id.street2"/></div>
                                 </t>
-
                                 <t t-if="invoice.company_id.city or invoice.company_id.state_id">
                                     <div>
                                         <t t-esc="'{}, {}'.format(invoice.company_id.city or '', invoice.company_id.state_id.name or '')"/>
@@ -61,6 +58,11 @@
                                 </t>
                             </td>
                             <td class="no-border" style="width: 40%; vertical-align: top;">
+                                <t t-if="invoice.sale_order_id.sale_order_type_id">
+                                    <div style="font-size: 13pt; bold;">
+                                        <t t-esc="invoice.sale_order_id.sale_order_type_id.name"/>
+                                    </div>
+                                </t>
                                 <div><strong>Kepada Yth:</strong></div>
                                 <!-- <div><t t-esc="invoice.partner_id.name or ''"/></div>
                                 <div><t t-esc="invoice.partner_id.street or ''"/></div>
@@ -83,9 +85,6 @@
                         <t t-if="invoice.partner_id.street2">
                             <div><t t-esc="invoice.partner_id.street2"/></div>
                         </t>
-                        <!-- <t t-if="invoice.partner_id.city">
-                            <div><t t-esc="invoice.partner_id.city"/></div>
-                        </t> -->
                         <t t-if="invoice.partner_id.city or invoice.partner_id.state_id or invoice.partner_id.zip">
                             <div>
                                 <t t-set="parts" t-value="[
@@ -93,16 +92,15 @@
                                     invoice.partner_id.state_id.name if invoice.partner_id.state_id else '',
                                     invoice.partner_id.zip or ''
                                 ]"/>
-
-                                <!-- Hanya ambil data yang tidak kosong -->
                                 <t t-set="clean_parts" t-value="[p for p in parts if p]"/>
-
-                                <!-- Gabungkan dengan koma -->
                                 <t t-out="', '.join(clean_parts)"/>
                             </div>
                         </t>
                         <t t-if="invoice.partner_id.phone">
-                        <div>Telp. <t t-esc="invoice.partner_id.phone"/></div>
+                            <div>Telp. <t t-esc="invoice.partner_id.phone"/></div>
+                        </t>
+                        <t t-if="invoice.partner_id.vat">
+                            <div>NPWP: <t t-esc="invoice.partner_id.vat"/></div>
                         </t>
                     </table>
 
