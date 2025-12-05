@@ -136,28 +136,7 @@
                         <tr>
                             <!-- Kolom kiri -->
                             <td style="width: 70%; vertical-align: top;">
-                                <!-- Catatan -->
-                                <div style="margin-bottom:10px;">
-                                    <div style="border:1px solid #000; padding:5px; font-size:11pt; text-align:center; width:85%;">
-                                        BARANG YANG TELAH DIBELI TIDAK DAPAT DITUKAR / DIKEMBALIKAN
-                                    </div>
-                                </div>
-                                
-                                <!-- Amount in Words (perlu custom field di Odoo 16) -->
-                                <!-- <t t-if="invoice.amount_total">
-                                    <div style="font-size: 11pt; margin-bottom: 10px;">
-                                        <strong>Terbilang:</strong>
-                                        <t t-esc="invoice.currency_id.amount_to_text(invoice.amount_total)"/>
-                                    </div>
-                                </t> -->
-                                
-                                <!-- Narration -->
-                                <t t-if="invoice.narration">
-                                    <div style="font-size: 11pt; margin-bottom: 10px;">
-                                        <span t-raw="invoice.narration"/>
-                                    </div>
-                                </t>
-                                
+
                                 <!-- REKENING PEMBAYARAN -->
                                 <div style="margin-top:15px; font-size:11pt; font-family:Consolas, monospace;">
                                     <t t-if="invoice.company_id.name == 'PT. TEGUH JAYA ABADI SENTOSA'">
@@ -166,12 +145,13 @@
                                                 <td style="width: 50%; vertical-align: top; padding-right: 10px;">
                                                     <div style="font-weight:bold; margin-bottom: 2px;">Rekening Pembayaran Ban Mobil</div>
                                                     <div>PT. TEGUH JAYA ABADI SENTOSA</div>
-                                                    <div>BCA: 8615-69-8888 / Mandiri: 148-00-2722777-9</div>
+                                                    <div>BCA: 8615-69-8888</div>
+                                                    <div>Mandiri: 148-00-2722777-9</div>
                                                 </td>
                                                 
                                                 <td style="width: 50%; vertical-align: top; padding-left: 10px;">
                                                     <div style="font-weight:bold; margin-bottom: 2px;">Rekening Pembayaran Ban Motor</div>
-                                                    <div>PT. TEGUH JAYA ABADI</div> <div>BCA: 0272-05-2369</div>
+                                                    <div>PT. TEGUH JAYA ABADI SENTOSA</div> <div>BCA: 0272-05-2369</div>
                                                 </td>
                                             </tr>
                                         </table>
@@ -199,6 +179,28 @@
                                     </t>
                                     
                                 </div>
+                                <!-- <div style="margin-bottom:10px;">
+                                    <div style="border:1px solid #000; padding:5px; font-size:11pt; text-align:center; width:85%;">
+                                        BARANG YANG TELAH DIBELI TIDAK DAPAT DITUKAR / DIKEMBALIKAN
+                                    </div>
+                                </div> -->
+                                
+                                <!-- Amount in Words (perlu custom field di Odoo 16) -->
+                                <!-- <t t-if="invoice.amount_total">
+                                    <div style="font-size: 11pt; margin-bottom: 10px;">
+                                        <strong>Terbilang:</strong>
+                                        <t t-esc="invoice.currency_id.amount_to_text(invoice.amount_total)"/>
+                                    </div>
+                                </t> -->
+                                
+                                <!-- Narration -->
+                                <t t-if="invoice.narration">
+                                    <div style="font-size: 11pt; margin-bottom: 10px;">
+                                        <span t-raw="invoice.narration"/>
+                                    </div>
+                                </t>
+                                
+                                
 
                                 <!-- Tanda tangan -->
                                 <table class="no-border" style="width:100%; text-align:center;">
