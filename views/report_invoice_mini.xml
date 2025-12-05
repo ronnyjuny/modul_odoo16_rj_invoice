@@ -156,11 +156,6 @@
                                         Term: <t t-esc="invoice.invoice_payment_term_id.name"/>  /  Due Date: <t t-esc="invoice.invoice_date_due"/>
                                     </div>
                                 </t>
-                                <!-- <t t-if="invoice.invoice_payment_term_id.name">
-                                    <div style="font-size: 11pt;">
-                                        Term: <t t-esc="invoice.invoice_payment_term_id.name"/>
-                                    </div>
-                                </t> -->
                             </td>
                         </tr>
                     </table>
@@ -224,37 +219,6 @@
                             </tr>
                         </t>
                     </table>
-                    <!-- <table class="no-border" style="font-size: 11pt;">
-                        <tr>
-                            <div><strong>Kepada Yth:</strong></div>
-                            <div><t t-esc="invoice.partner_id.name or ''"/></div>
-                            <div><t t-esc="invoice.partner_id.street or ''"/></div>
-                        
-                            <t t-if="invoice.partner_id.street2">
-                                <div><t t-esc="invoice.partner_id.street2"/></div>
-                            </t>
-
-                            <t t-if="invoice.partner_id.city or invoice.partner_id.state_id or invoice.partner_id.zip">
-                                <div>
-                                    <t t-set="parts" t-value="[
-                                        invoice.partner_id.city or '',
-                                        invoice.partner_id.state_id.name if invoice.partner_id.state_id else '',
-                                        invoice.partner_id.zip or ''
-                                    ]"/>
-                                    <t t-set="clean_parts" t-value="[p for p in parts if p]"/>
-                                    <t t-out="', '.join(clean_parts)"/>
-                                </div>
-                            </t>
-
-                            <t t-if="invoice.partner_id.phone">
-                                <div>Telp. <t t-esc="invoice.partner_id.phone"/></div>
-                            </t>
-
-                            <t t-if="invoice.partner_id.vat">
-                                <div>NPWP: <t t-esc="invoice.partner_id.vat"/></div>
-                            </t>
-                        </tr>
-                    </table> -->
 
                     <table class="no-border" style="font-size: 11pt; width: 100%;">
                         <tr>
@@ -274,9 +238,6 @@
                         </tr>
                     </table>
 
-                    
-
-                    <!-- TABEL PRODUK -->
                     <table style="font-size: 11pt; width:100%;">
                         <thead>
                             <tr>
@@ -299,7 +260,6 @@
                                             <t t-raw="(line.product_id and line.product_id.name or line.name or '').replace('\n','&lt;br/&gt;')"/>
                                         </td>
                                         <td style="text-align:center;">
-                                            <!-- <t t-esc="'%d %s' % (int(line.quantity), line.product_uom_id.name or '')"/> -->
                                             <t t-esc="'{:,}'.format(int(line.quantity)).replace(',', '.') + ' ' + (line.product_uom_id.name or '')"/>
                                         </td>
                                         <td style="text-align:right;">
@@ -433,52 +393,68 @@
                         </t>
 
                         <t t-if="company == 'PT. TEGUH PERKASA KARYA PERDANA'">
-                            <div style="text-align:left;">
-                                <div>Rekening A.N: PT. TEGUH PERKASA KARYA PERDANA</div>
-                                <div>BCA: 191-0771-988 / BRI: 012101-0025-393-00</div>
+                            <div style="text-align:center;">
+                                <div>Rekening A.N: PT. TEGUH PERKASA KARYA PERDANA          Bank BCA: 191-0771-988   /   Bank BRI: 012101-0025-393-00</div>
                             </div>
                         </t>
 
                         <t t-if="company == 'PT. TEGUH KALTARA PERKASA'">
-                            <div style="text-align:left;">
-                                <div>Rekening A.N: PT. TEGUH KALTARA PERKASA</div>
-                                <div>BCA: 780-520-8881 / Mandiri: 148-002-2285-558</div>
+                            <div style="text-align:center;">
+                                <div>Rekening A.N: PT. TEGUH KALTARA PERKASA          Bank BCA: 780-520-8881   /   Bank Mandiri: 148-002-2285-558</div>
                             </div>
                         </t>
 
                         <t t-if="company == 'PT. TEGUH GEMILANG OTOMOTIF'">
-                            <div style="text-align:left;">
-                                <div>Rekening A.N: PT. TEGUH GEMILANG OTOMOTIF</div>
-                                <div>BCA: 191-8993-389</div>
+                            <div style="text-align:center;">
+                                <div>Rekening A.N: PT. TEGUH GEMILANG OTOMOTIF          Bank BCA: 191-8993-389</div>
                             </div>
                         </t>
 
-                        <t t-if="company == 'PT. TEGUH PRIMA SENTOSA'">
+                        <!-- <t t-if="company == 'PT. TEGUH PRIMA SENTOSA'">
                             <t t-if="order_type">
-                                <!-- Samarinda -->
                                 <t t-if="order_type == 'Samarinda'">
                                     <div>Rekening A.N: PT. TEGUH PRIMA SENTOSA</div>
                                     <div>Bank BCA: 5135-6767-88</div>
                                 </t>
 
-                                <!-- Balikpapan -->
                                 <t t-elif="order_type == 'Balikpapan'">
                                     <div>Rekening A.N: PT. TEGUH PRIMA SENTOSA</div>
                                     <div>Bank BCA: 5135-77-8181</div>
                                 </t>
 
-                                <!-- Malinau -->
                                 <t t-elif="order_type == 'Malinau'">
                                     <div>Rekening A.N: PT. TEGUH PRIMA SENTOSA</div>
                                     <div>Bank Mandiri: 14800-889-25-899</div>
                                 </t>
 
-                                <!-- Tarakan -->
                                 <t t-elif="order_type == 'Tarakan'">
                                     <div>Rekening A.N: PT. TEGUH PRIMA SENTOSA</div>
                                     <div>Bank Mandiri: 14800-889-25-899</div>
                                 </t>
                             </t>
+                        </t> -->
+                        <t t-if="company == 'PT. TEGUH PRIMA SENTOSA'">
+                            <div style="text-align:center;">
+                                <t t-if="order_type">
+
+                                    <t t-if="order_type == 'Samarinda'">
+                                        <div>Rekening A.N: PT. TEGUH PRIMA SENTOSA          Bank BCA: 5135-6767-88</div>
+                                    </t>
+
+                                    <t t-elif="order_type == 'Balikpapan'">
+                                        <div>Rekening A.N: PT. TEGUH PRIMA SENTOSA          Bank BCA: 5135-77-8181</div>
+                                    </t>
+
+                                    <t t-elif="order_type == 'Malinau'">
+                                        <div>Rekening A.N: PT. TEGUH PRIMA SENTOSA          Bank Mandiri: 14800-889-25-899</div>
+                                    </t>
+
+                                    <t t-elif="order_type == 'Tarakan'">
+                                        <div>Rekening A.N: PT. TEGUH PRIMA SENTOSA          Bank Mandiri: 14800-889-25-899</div>
+                                    </t>
+
+                                </t>
+                            </div>
                         </t>
                     </div>
 
