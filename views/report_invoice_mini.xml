@@ -422,7 +422,7 @@
                         </t>
                         <t t-if="invoice.no_seri">
                             <tr>
-                                <td colspan="6">
+                                <td colspan="6" style="font-size: 11pt;">
                                     No Seri: <t t-esc="invoice.no_seri"/>
                                 </td>
                             </tr>
@@ -430,7 +430,7 @@
 
                         <t t-if="invoice.keterangan">
                             <tr>
-                                <td colspan="6">
+                                <td colspan="6" style="font-size: 11pt;">
                                     Keterangan: <t t-esc="invoice.keterangan"/>
                                 </td>
                             </tr>
