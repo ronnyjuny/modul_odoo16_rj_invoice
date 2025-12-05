@@ -394,19 +394,20 @@
 
                         <t t-if="company == 'PT. TEGUH PERKASA KARYA PERDANA'">
                             <div style="text-align:center;">
-                                <div>Rekening A.N: PT. TEGUH PERKASA KARYA PERDANA          Bank BCA: 191-0771-988   /   Bank BRI: 012101-0025-393-00</div>
+                                <div>Rekening A.N: PT. TEGUH PERKASA KARYA PERDANA &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Bank BCA: 191-0771-988 &nbsp;&nbsp;&nbsp;&nbsp;/ &nbsp;&nbsp;&nbsp;&nbsp;Bank BRI: 012101-0025-393-00</div>
                             </div>
                         </t>
 
                         <t t-if="company == 'PT. TEGUH KALTARA PERKASA'">
                             <div style="text-align:center;">
-                                <div>Rekening A.N: PT. TEGUH KALTARA PERKASA          Bank BCA: 780-520-8881   /   Bank Mandiri: 148-002-2285-558</div>
+                                <div>Rekening A.N: PT. TEGUH KALTARA PERKASA &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Bank BCA: 780-520-8881 &nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp; Bank Mandiri: 148-002-2285-558</div>
                             </div>
                         </t>
 
                         <t t-if="company == 'PT. TEGUH GEMILANG OTOMOTIF'">
                             <div style="text-align:center;">
-                                <div>Rekening A.N: PT. TEGUH GEMILANG OTOMOTIF          Bank BCA: 191-8993-389</div>
+                                <div>Rekening A.N: PT. TEGUH GEMILANG OTOMOTIF &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                Bank BCA: 191-8993-389</div>
                             </div>
                         </t>
 
@@ -438,19 +439,23 @@
                                 <t t-if="order_type">
 
                                     <t t-if="order_type == 'Samarinda'">
-                                        <div>Rekening A.N: PT. TEGUH PRIMA SENTOSA          Bank BCA: 5135-6767-88</div>
+                                        <div>Rekening A.N: PT. TEGUH PRIMA SENTOSA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        Bank BCA: 5135-6767-88</div>
                                     </t>
 
                                     <t t-elif="order_type == 'Balikpapan'">
-                                        <div>Rekening A.N: PT. TEGUH PRIMA SENTOSA          Bank BCA: 5135-77-8181</div>
+                                        <div>Rekening A.N: PT. TEGUH PRIMA SENTOSA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        Bank BCA: 5135-77-8181</div>
                                     </t>
 
                                     <t t-elif="order_type == 'Malinau'">
-                                        <div>Rekening A.N: PT. TEGUH PRIMA SENTOSA          Bank Mandiri: 14800-889-25-899</div>
+                                        <div>Rekening A.N: PT. TEGUH PRIMA SENTOSA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        Bank Mandiri: 14800-889-25-899</div>
                                     </t>
 
                                     <t t-elif="order_type == 'Tarakan'">
-                                        <div>Rekening A.N: PT. TEGUH PRIMA SENTOSA          Bank Mandiri: 14800-889-25-899</div>
+                                        <div>Rekening A.N: PT. TEGUH PRIMA SENTOSA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        Bank Mandiri: 14800-889-25-899</div>
                                     </t>
 
                                 </t>
