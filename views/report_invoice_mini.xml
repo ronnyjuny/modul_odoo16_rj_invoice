@@ -413,7 +413,7 @@
                         or ''
                     "/>
 
-                    <div style="font-size:9pt; font-family:Consolas, monospace; width:100%; margin-top:5px;">
+                    <div style="font-size:10pt; font-family:Consolas, monospace; width:100%; margin-top:5px;">
 
                         <t t-if="company == 'PT. TEGUH JAYA ABADI SENTOSA'">
                             <table class="no-border" style="width:100%;">
