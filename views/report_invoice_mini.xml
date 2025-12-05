@@ -138,13 +138,23 @@
                                 <!-- Nomor Sequence -->
                                 <t t-if="invoice.custom_sequence">
                                     <div style="font-size: 12pt;">
-                                        <t t-esc="invoice.custom_sequence"/>
+                                        No. SEQ: <t t-esc="invoice.custom_sequence"/>
                                     </div>
                                 </t>
                                 <!-- No Invoice -->
                                 <t t-if="invoice.name">
                                     <div style="font-size: 11pt;">
                                         <t t-esc="invoice.name"/>
+                                    </div>
+                                </t>
+                                <t t-if="invoice.invoice_date">
+                                    <div style="font-size: 11pt;">
+                                        Invoice Date: <t t-esc="invoice.invoice_date"/>
+                                    </div>
+                                </t>
+                                <t t-if="invoice.invoice_date_due">
+                                    <div style="font-size: 11pt;">
+                                        Due Date: <t t-esc="invoice.invoice_date_due"/>
                                     </div>
                                 </t>
                             </td>
@@ -183,7 +193,7 @@
                     <table class="no-border" style="font-size: 11pt; margin-bottom: 6px; width: 100%;">
                         <tr>
                             <!-- Date -->
-                            <td style="width:25%;">Date: <span t-field="invoice.invoice_date"/></td>
+                            <td style="width:25%;">Invoice Date: <span t-field="invoice.invoice_date"/></td>
 
                             <!-- PO -->
                             <t t-if="invoice.ref">
