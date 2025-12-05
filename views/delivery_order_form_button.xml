@@ -12,7 +12,7 @@
                         icon="fa-print"
                         class="btn-secondary"/>
             </xpath> -->
-            <xpath expr="//div[@class='oe_button_box']" position="inside">
+            <xpath expr="//header" position="inside">
                 <button name="%(rj_invoice.action_report_delivery_order_mini)d"
                         string="Custom Print"
                         type="action"
