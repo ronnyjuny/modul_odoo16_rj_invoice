@@ -72,15 +72,13 @@
                                 </t>
                             </td>
 
-                            <!-- Kolom tengah: SURAT JALAN -->
                             <td class="no-border" style="width: 25%; text-align: center;">
-                                <div style="font-size: 14pt; font-weight: bold;">
+                                <div style="font-size: 13pt; font-weight: bold;">
                                     SURAT JALAN
                                 </div>
                             </td>
 
-                            <!-- Kolom kanan: SEQ (hanya jika ada datanya) -->
-                            <td class="no-border" style="width: 30%; text-align: right; font-size: 14pt;">
+                            <td class="no-border" style="width: 30%; text-align: right; font-size: 13pt;">
                                 <t t-if="doc.custom_sequence">
                                     <div>
                                         <strong>SEQ: <t t-esc="doc.custom_sequence"/></strong>
@@ -92,14 +90,22 @@
                     <hr style="border: 0; border-top: 1px solid #000; margin: 3px 0; width:100%;" />
                     <table class="no-border" style="font-size: 11pt; width:100%;">
                         <tr>
-                            <td style="vertical-align: top; width: 85%;">
+                            <td style="vertical-align: top; width: 50%;">
                                 <table class="no-border" style="font-size: 11pt; width:100%;">
                                     <tr>
                                         <td style="padding:0; margin:0;">
                                             <strong>Kepada Yth:</strong>
                                         </td>
                                     </tr>
-
+                                </table>
+                            </td>
+                            <td style="vertical-align: top; width: 50%; text-align: right; font-size: 15pt; font-weight:bold;">
+                                SURAT JALAN
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="vertical-align: top; width: 100%;">
+                                <table class="no-border" style="font-size: 11pt; width:100%;">
                                     <tr>
                                         <td style="padding:0; margin:0;">
                                             <t t-esc="doc.partner_id.name or ''"/>
@@ -139,19 +145,7 @@
                                             </td>
                                         </tr>
                                     </t>
-
-                                    <t t-if="doc.partner_id.vat">
-                                        <tr>
-                                            <td style="padding:0; margin:0;">
-                                                NPWP: <t t-esc="doc.partner_id.vat"/>
-                                            </td>
-                                        </tr>
-                                    </t>
                                 </table>
-                            </td>
-
-                            <td style="vertical-align: top; width: 15%; text-align: right; font-size: 15pt; font-weight:bold;">
-                                SURAT JALAN
                             </td>
                         </tr>
                     </table>
