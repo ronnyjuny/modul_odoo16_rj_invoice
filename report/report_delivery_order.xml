@@ -88,19 +88,30 @@
                         </tr>
                     </table>
                     <hr style="border: 0; border-top: 1px solid #000; margin: 3px 0; width:100%;" />
-                    <table class="no-border" style="font-size: 11pt; width:100%;">
+                    <table class="no-border" style="font-size: 11pt; width:100%; margin-bottom: 5px;">
                         <tr>
-                            <td style="vertical-align: top; width: 50%;">
-                                    <tr>
-                                        <td style="padding:0; margin:0;">
-                                            <strong>Kepada Yth:</strong>
-                                        </td>
-                                    </tr>
+                            <!-- Kiri: Label Kepada Yth / Vendor Address -->
+                            <td class="no-border" style="width: 50%; text-align: left; padding:0; margin:0;">
+                                <strong>
+                                    <t t-if="doc.picking_type_id.code == 'outgoing'">
+                                        Kepada Yth:
+                                    </t>
+                                    <t t-if="doc.picking_type_id.code == 'incoming'">
+                                        Vendor Address:
+                                    </t>
+                                    <t t-if="doc.picking_type_id.code not in ['incoming', 'outgoing']">
+                                        Kepada:
+                                    </t>
+                                </strong>
                             </td>
-                            <td style="vertical-align: top; width: 50%;">
-                                <t t-esc="doc.name or ''"/>
+
+                            <!-- Kanan: Nomor DO / Picking -->
+                            <td class="no-border" style="width: 50%; text-align: right; padding:0; margin:0;">
+                                <strong><t t-esc="doc.name or ''"/></strong>
                             </td>
                         </tr>
+                    </table>
+
                         <tr>
                             <td style="vertical-align: top; width: 100%;">
                                 <table class="no-border" style="font-size: 11pt; width:100%;">
