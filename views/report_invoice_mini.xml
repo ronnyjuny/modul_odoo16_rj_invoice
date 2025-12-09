@@ -136,7 +136,7 @@
                                 </t>
                                 <!-- Nomor Sequence -->
                                 <t t-if="invoice.custom_sequence">
-                                    <div style="font-size: 12pt;">
+                                    No. Seq: <div style="font-size: 13pt;">
                                         <t t-esc="invoice.custom_sequence"/>
                                     </div>
                                 </t>
