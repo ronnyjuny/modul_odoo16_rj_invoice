@@ -44,7 +44,7 @@
                 </style>
 
                 <div class="page" style="font-size: 11pt; line-height: 1.3;">
-                    <table class="no-border" style="font-size: 11pt;">
+                    <!-- <table class="no-border" style="font-size: 11pt;">
                         <tr>
                             <td class="no-border" style="width: 60%;">
                                 <t t-if="doc.company_id.name">
@@ -54,6 +54,33 @@
                                 </t>
                             </td>
                             <td class="no-border" style="width: 40%; text-align: right; font-size: 14pt;">
+                                <t t-if="doc.custom_sequence">
+                                    <div>
+                                        <strong>SEQ: <t t-esc="doc.custom_sequence"/></strong>
+                                    </div>
+                                </t>
+                            </td>
+                        </tr>
+                    </table> -->
+                    <table class="no-border" style="font-size: 11pt; width:100%;">
+                        <tr>
+                            <td class="no-border" style="width: 45%; text-align: left;">
+                                <t t-if="doc.company_id.name">
+                                    <div style="font-size: 13pt;">
+                                        <strong><t t-esc="doc.company_id.name"/></strong>
+                                    </div>
+                                </t>
+                            </td>
+
+                            <!-- Kolom tengah: SURAT JALAN -->
+                            <td class="no-border" style="width: 25%; text-align: center;">
+                                <div style="font-size: 14pt; font-weight: bold;">
+                                    SURAT JALAN
+                                </div>
+                            </td>
+
+                            <!-- Kolom kanan: SEQ (hanya jika ada datanya) -->
+                            <td class="no-border" style="width: 30%; text-align: right; font-size: 14pt;">
                                 <t t-if="doc.custom_sequence">
                                     <div>
                                         <strong>SEQ: <t t-esc="doc.custom_sequence"/></strong>
