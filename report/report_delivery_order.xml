@@ -103,51 +103,66 @@
                                 </td>
                             </tr>
                         </table>
-                        <tr>
-                            <td style="vertical-align: top; width: 100%;">
-                                <table class="no-border" style="font-size: 11pt; width:100%;">
-                                    <tr>
-                                        <td style="padding:0; margin:0;">
-                                            <t t-esc="doc.partner_id.name or ''"/>
-                                        </td>
-                                    </tr>
+                        <table class="no-border" style="font-size: 11pt; width:100%; margin-bottom: 10px;">
+                            <tr>
+                                <td style="vertical-align: top; width: 100%; padding:0; margin:0;">
 
-                                    <tr>
-                                        <td style="padding:0; margin:0;">
-                                            <t t-esc="doc.partner_id.street or ''"/>
-                                        </td>
-                                    </tr>
+                                    <table class="no-border" style="font-size: 11pt; width:100%; padding:0; margin:0;">
 
-                                    <t t-if="doc.partner_id.street2">
+                                        <!-- Nama -->
                                         <tr>
                                             <td style="padding:0; margin:0;">
-                                                <t t-esc="doc.partner_id.street2"/>
+                                                <t t-esc="doc.partner_id.name or ''"/>
                                             </td>
                                         </tr>
-                                    </t>
 
-                                    <t t-if="doc.partner_id.city or doc.partner_id.state_id or doc.partner_id.zip">
+                                        <!-- Alamat 1 -->
                                         <tr>
                                             <td style="padding:0; margin:0;">
-                                                <t t-set="parts" t-value="[doc.partner_id.city or '',
-                                                                        doc.partner_id.state_id.name if doc.partner_id.state_id else '',
-                                                                        doc.partner_id.zip or '']"/>
-                                                <t t-set="clean_parts" t-value="[p for p in parts if p]"/>
-                                                <t t-out="', '.join(clean_parts)"/>
+                                                <t t-esc="doc.partner_id.street or ''"/>
                                             </td>
                                         </tr>
-                                    </t>
 
-                                    <t t-if="doc.partner_id.phone">
-                                        <tr>
-                                            <td style="padding:0; margin:0;">
-                                                Telp. <t t-esc="doc.partner_id.phone"/>
-                                            </td>
-                                        </tr>
-                                    </t>
-                                </table>
-                            </td>
-                        </tr>
+                                        <!-- Alamat 2 -->
+                                        <t t-if="doc.partner_id.street2">
+                                            <tr>
+                                                <td style="padding:0; margin:0;">
+                                                    <t t-esc="doc.partner_id.street2"/>
+                                                </td>
+                                            </tr>
+                                        </t>
+
+                                        <!-- Kota, Provinsi, Zip -->
+                                        <t t-if="doc.partner_id.city or doc.partner_id.state_id or doc.partner_id.zip">
+                                            <tr>
+                                                <td style="padding:0; margin:0;">
+                                                    <t t-set="parts" t-value="[
+                                                        doc.partner_id.city or '',
+                                                        doc.partner_id.state_id.name if doc.partner_id.state_id else '',
+                                                        doc.partner_id.zip or ''
+                                                    ]"/>
+                                                    <t t-set="clean_parts" t-value="[p for p in parts if p]"/>
+                                                    <t t-out="', '.join(clean_parts)"/>
+                                                </td>
+                                            </tr>
+                                        </t>
+
+                                        <!-- Telepon -->
+                                        <t t-if="doc.partner_id.phone">
+                                            <tr>
+                                                <td style="padding:0; margin:0;">
+                                                    Telp. <t t-esc="doc.partner_id.phone"/>
+                                                </td>
+                                            </tr>
+                                        </t>
+
+                                    </table>
+
+                                </td>
+                            </tr>
+                        </table>
+
+
                     </table>
 
                 </div>
