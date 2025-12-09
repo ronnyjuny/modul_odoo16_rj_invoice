@@ -359,7 +359,7 @@
                     </table>
                     <div style="font-size: 11pt;">
                         <t t-if="invoice.narration">
-                            <div tyle="margin-bottom: 5px;">
+                            <div margin-bottom: 5px;">
                                 <span t-raw="invoice.narration"/>
                             </div>
                         </t>
