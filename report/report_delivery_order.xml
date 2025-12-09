@@ -1,16 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record id="action_report_delivery_order_mini" model="ir.actions.report">
-        <field name="name">Custom Delivery Order</field>
-        <field name="model">stock.picking</field>
-        <field name="report_type">qweb-pdf</field>
-        <field name="report_name">rj_invoice.report_delivery_order_mini_template</field>
-        <field name="report_file">rj_invoice.report_delivery_order_mini_template</field>
-        <field name="paperformat_id" ref="rj_invoice.paperformat_invoice_a5_custom"/>
-        <field name="binding_model_id" ref="stock.model_stock_picking"/>
-        <field name="binding_type">report</field>
-    </record>
-
     <template id="report_delivery_order_mini_template">
         <t t-call="web.html_container">
             <meta charset="utf-8"/>
@@ -85,8 +74,8 @@
                         </tr>
                     </table>
 
-
-                    <!-- <table class="no-border" style="font-size: 11pt; width:100%;">
+                    <!-- CUSTOMER ADDRESS + EXTRA INFO -->
+                    <table class="no-border" style="font-size: 11pt; width:100%; margin-top:2px;">
                         <tr>
                             <td style="vertical-align: top; width: 100%;">
 
@@ -133,57 +122,6 @@
                                         </tr>
                                     </t>
 
-                                </table> -->
-
-                                <table class="no-border" style="font-size: 11pt; width:100%;">
-                                    <!-- Nama customer -->
-                                    <tr>
-                                        <td style="padding:0; margin:0;">
-                                            <t t-esc="doc.partner_id.name or ''"/>
-                                        </td>
-                                    </tr>
-
-                                    <!-- Alamat 1 -->
-                                    <tr>
-                                        <td style="padding:0; margin:0;">
-                                            <t t-esc="doc.partner_id.street or ''"/>
-                                        </td>
-                                    </tr>
-
-                                    <!-- Alamat 2 -->
-                                    <t t-if="doc.partner_id.street2">
-                                        <tr>
-                                            <td style="padding:0; margin:0;">
-                                                <t t-esc="doc.partner_id.street2"/>
-                                            </td>
-                                        </tr>
-                                    </t>
-
-                                    <!-- Kota, Provinsi, Kodepos -->
-                                    <t t-if="doc.partner_id.city or doc.partner_id.state_id or doc.partner_id.zip">
-                                        <tr>
-                                            <td style="padding:0; margin:0;">
-                                                <t t-set="parts" t-value="[
-                                                    doc.partner_id.city or '',
-                                                    doc.partner_id.state_id.name if doc.partner_id.state_id else '',
-                                                    doc.partner_id.zip or ''
-                                                ]"/>
-                                                <t t-set="clean_parts" t-value="[p for p in parts if p]"/>
-                                                <t t-out="', '.join(clean_parts)"/>
-                                            </td>
-                                        </tr>
-                                    </t>
-
-                                    <!-- Telepon -->
-                                    <t t-if="doc.partner_id.phone">
-                                        <tr>
-                                            <td style="padding:0; margin:0;">
-                                                Telp. <t t-esc="doc.partner_id.phone"/>
-                                            </td>
-                                        </tr>
-                                    </t>
-
-                                    <!-- Tambahan Data Baru -->
                                     <!-- Customer PO -->
                                     <t t-if="doc.po_customer">
                                         <tr>
@@ -193,7 +131,7 @@
                                         </tr>
                                     </t>
 
-                                    <!-- Nama Warehouse -->
+                                    <!-- Warehouse -->
                                     <t t-if="doc.location_id">
                                         <tr>
                                             <td style="padding:0; margin:0;">
@@ -202,8 +140,16 @@
                                         </tr>
                                     </t>
 
-                                </table>
+                                    <!-- Salesperson -->
+                                    <t t-if="doc.sale_id.user_id.name">
+                                        <tr>
+                                            <td style="padding:0; margin:0;">
+                                                Salesperson: <t t-esc="doc.sale_id.user_id.name"/>
+                                            </td>
+                                        </tr>
+                                    </t>
 
+                                </table>
 
                             </td>
                         </tr>
