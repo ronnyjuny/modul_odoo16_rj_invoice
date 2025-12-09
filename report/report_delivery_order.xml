@@ -89,7 +89,6 @@
                     </table>
                     <hr style="border: 0; border-top: 1px solid #000; margin: 3px 0; width:100%;" />
                     <table class="no-border" style="font-size: 11pt; width:100%;">
-                        <table class="no-border" style="font-size: 11pt; width:100%; margin-bottom: 5px;">
                             <tr>
                                 <td style="vertical-align: top; width: 50%;">
                                         <tr>
@@ -102,8 +101,8 @@
                                     <t t-esc="doc.name or ''"/>
                                 </td>
                             </tr>
-                        </table>
-                        <table class="no-border" style="font-size: 11pt; width:100%; margin-bottom: 10px;">
+                    </table>
+                    <table class="no-border" style="font-size: 11pt; width:100%; margin-bottom: 10px;">
                             <tr>
                                 <td style="vertical-align: top; width: 100%; padding:0; margin:0;">
 
@@ -155,16 +154,9 @@
                                                 </td>
                                             </tr>
                                         </t>
-
-                                    </table>
-
                                 </td>
                             </tr>
-                        </table>
-
-
                     </table>
-
                 </div>
             </t>
         </t>
