@@ -148,12 +148,14 @@
                                 </t>
                                 <t t-if="invoice.invoice_date">
                                     <div style="font-size: 11pt;">
-                                        Invoice Date: <t t-esc="invoice.invoice_date"/>
+                                        Invoice Date: <t t-esc="invoice.invoice_date.strftime('%d/%m/%Y')"/>
                                     </div>
                                 </t>
+
                                 <t t-if="invoice.invoice_date_due">
                                     <div style="font-size: 11pt;">
-                                        Term: <t t-esc="invoice.invoice_payment_term_id.name"/>  /  Due Date: <t t-esc="invoice.invoice_date_due"/>
+                                        Term: <t t-esc="invoice.invoice_payment_term_id.name"/>
+                                        /  Due Date: <t t-esc="invoice.invoice_date_due.strftime('%d/%m/%Y')"/>
                                     </div>
                                 </t>
                             </td>
