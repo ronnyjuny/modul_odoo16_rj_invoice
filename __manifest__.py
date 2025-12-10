@@ -1,6 +1,6 @@
 {
-    'name': 'Invoice Custom',
-    'summary': 'Format invoice custom A5 & A4',
+    'name': 'Custom Invoice & DO',
+    'summary': 'Invoice & Delivery Order Custom Format',
     'version': '1.0',
     'category': 'Accounting',
     'author': 'Ronny Lim',
