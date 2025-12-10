@@ -168,7 +168,8 @@
                             <t t-set="state" t-value="str(shipping.state_id.name if shipping.state_id else '').strip()"/>
                             <t t-set="zip" t-value="str(shipping.zip or '').strip()"/>
 
-                            <t t-set="location" t-value="', '.join([x for x in [city, state, zip] if x])"/>
+                            <t t-set="location"
+                                t-value="' , '.join([str(x) for x in [city, state, zip] if x])"/>
 
                             <t t-if="location">
                                 <tr><td style="padding:0; margin:0;"><t t-esc="location"/></td></tr>
@@ -197,8 +198,8 @@
                             <t t-set="state" t-value="str(shipping.state_id.name if shipping.state_id else '').strip()"/>
                             <t t-set="zip" t-value="str(shipping.zip or '').strip()"/>
 
-                            <t t-set="location" t-value="', '.join([x for x in [city, state, zip] if x])"/>
-
+                            <t t-set="location"
+                                t-value="' - '.join([str(x) for x in [city, state, zip] if x])"/>
 
                             <t t-if="location">
                                 <tr><td style="padding:0; margin:0;"><t t-esc="location"/></td></tr>
