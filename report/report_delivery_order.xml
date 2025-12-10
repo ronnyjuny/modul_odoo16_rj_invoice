@@ -140,19 +140,11 @@
                                             </td>
                                         </tr>
                                     </t>
-
-                                    <t t-if="doc.partner_id.vat">
-                                        <tr>
-                                            <td style="padding:0; margin:0;">
-                                                NPWP: <t t-esc="doc.partner_id.vat"/>
-                                            </td>
-                                        </tr>
-                                    </t>
                                 </table>
                             </td>
 
                             <td style="vertical-align: top; width: 20%; text-align: right; font-size: 12pt;">
-                                SURAT JALAN
+                                <t t-esc="doc.name"/>
                             </td>
                         </tr>
                     </table>
