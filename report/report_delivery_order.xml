@@ -263,9 +263,10 @@
 
                         <tbody>
                             <t t-foreach="doc.move_ids" t-as="l" t-counter="no">
+                                <t t-set="index" t-value="index + 1"/>
                                 <tr>
                                     <td style="text-align:center; padding:4px;">
-                                        <t t-esc="no"/>
+                                        <t t-esc="index"/>
                                     </td>
                                     <td style="text-align:left; padding:4px;">
                                         <t t-esc="(l.product_id.name or '')[:50]"/>
