@@ -164,9 +164,9 @@
                             </t>
 
                             <!-- City, State, Zip (SAFE STRING) -->
-                            <t t-set="city" t-value="str(shipping.city or '')"/>
-                            <t t-set="state" t-value="str(shipping.state_id.name) if shipping.state_id else ''"/>
-                            <t t-set="zip" t-value="str(shipping.zip or '')"/>
+                            <t t-set="city" t-value="('%s' % (shipping.city or '')).strip()"/>
+                            <t t-set="state" t-value="('%s' % (shipping.state_id.name if shipping.state_id else '')).strip()"/>
+                            <t t-set="zip" t-value="('%s' % (shipping.zip or '')).strip()"/>
 
                             <t t-set="location" t-value="' , '.join([x for x in [city, state, zip] if x])"/>
 
@@ -193,9 +193,9 @@
                             </t>
 
                             <!-- City, State, Zip (SAFE STRING) -->
-                            <t t-set="city" t-value="str(doc.company_id.city or '')"/>
-                            <t t-set="state" t-value="str(doc.company_id.state_id.name) if doc.company_id.state_id else ''"/>
-                            <t t-set="zip" t-value="str(doc.company_id.zip or '')"/>
+                            <t t-set="city" t-value="('%s' % (doc.company_id.city or '')).strip()"/>
+                            <t t-set="state" t-value="('%s' % (doc.company_id.state_id.name if doc.company_id.state_id else '')).strip()"/>
+                            <t t-set="zip" t-value="('%s' % (doc.company_id.zip or '')).strip()"/>
 
                             <t t-set="location" t-value="' - '.join([x for x in [city, state, zip] if x])"/>
 
