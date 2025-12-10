@@ -186,9 +186,10 @@
                             <!-- City, State, Zip -->
                             <t t-set="city" t-value="str(shipping.city or '').strip()"/>
                             <t t-set="state" t-value="str(shipping.state_id.name if shipping.state_id else '').strip()"/>
-                            <t t-set="zip" t-value="str(shipping.zip or '').strip()"/>
+                            <t t-set="zip_code" t-value="str(shipping.zip or '').strip()"/>
+
                             <t t-set="location"
-                                t-value="', '.join([str(x) for x in [city, state, zip] if x])"/>
+                                t-value="', '.join([str(x) for x in [city, state, zip_code] if x])"/>
 
                             <t t-if="location">
                                 <tr><td style="padding:0; margin:0;"><t t-esc="location"/></td></tr>
@@ -215,10 +216,10 @@
                             <!-- City, State, Zip -->
                             <t t-set="city" t-value="str(doc.company_id.city or '').strip()"/>
                             <t t-set="state" t-value="str(doc.company_id.state_id.name if doc.company_id.state_id else '').strip()"/>
-                            <t t-set="zip" t-value="str(doc.company_id.zip or '').strip()"/>
+                            <t t-set="zip_code" t-value="str(doc.company_id.zip or '').strip()"/>
 
                             <t t-set="location"
-                                t-value="' - '.join([str(x) for x in [city, state, zip] if x])"/>
+                                t-value="' - '.join([str(x) for x in [city, state, zip_code] if x])"/>
 
                             <t t-if="location">
                                 <tr><td style="padding:0; margin:0;"><t t-esc="location"/></td></tr>
