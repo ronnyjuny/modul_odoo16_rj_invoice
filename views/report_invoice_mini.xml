@@ -296,6 +296,34 @@
                         </tbody>
                     </table>
 
+                    <table style="width:100%; font-size:11pt; border-collapse:collapse; margin-top:5px;" border="1">
+                        <t t-if="invoice.narration">
+                            <tr>
+                                <td style="padding:6px;">
+                                    <span t-raw="invoice.narration"/>
+                                </td>
+                            </tr>
+                        </t>
+
+                        <t t-if="invoice.no_seri">
+                            <tr>
+                                <td style="padding:6px;">
+                                    <strong>NO. SERI:</strong>
+                                    <t t-esc="invoice.no_seri"/>
+                                </td>
+                            </tr>
+                        </t>
+
+                        <t t-if="invoice.keterangan">
+                            <tr>
+                                <td style="padding:6px;">
+                                    <strong>KETERANGAN:</strong>
+                                    <t t-esc="invoice.keterangan"/>
+                                </td>
+                            </tr>
+                        </t>
+                    </table>
+
                     <table class="no-border" style="margin-top: 7px; font-size: 11pt; width: 100%;">
                         <tr>
                             <td style="width: 70%; vertical-align: top;">
@@ -388,34 +416,7 @@
                         </div>
                     </t>
                     <hr style="border: 0; border-top: 1px solid #000; margin: 3px 0; width:100%;" />
-
-                    <table style="width:100%; font-size:11pt; border-collapse:collapse; margin-top:5px;" border="1">
-                        <t t-if="invoice.narration">
-                            <tr>
-                                <td style="padding:6px;">
-                                    <span t-raw="invoice.narration"/>
-                                </td>
-                            </tr>
-                        </t>
-
-                        <t t-if="invoice.no_seri">
-                            <tr>
-                                <td style="padding:6px;">
-                                    <strong>NO. SERI:</strong>
-                                    <t t-esc="invoice.no_seri"/>
-                                </td>
-                            </tr>
-                        </t>
-
-                        <t t-if="invoice.keterangan">
-                            <tr>
-                                <td style="padding:6px;">
-                                    <strong>KETERANGAN:</strong>
-                                    <t t-esc="invoice.keterangan"/>
-                                </td>
-                            </tr>
-                        </t>
-                    </table>
+                    
                     
                     <t t-set="company" t-value="invoice.company_id.name"/>
 

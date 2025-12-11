@@ -65,8 +65,7 @@
                     <table class="no-border" style="font-size: 11pt; width:100%;">
                         <tr>
                             <td style="vertical-align: top; width: 80%;">
-                                
-                                <!-- ====== SET PARTNER INVOICE DENGAN FALLBACK ====== -->
+
                                 <t t-set="invoice_partner"
                                 t-value="
                                         doc.sale_id.partner_invoice_id
@@ -81,14 +80,12 @@
                                         </td>
                                     </tr>
 
-                                    <!-- Nama -->
                                     <tr>
                                         <td style="padding:0; margin:0;">
                                             <t t-esc="invoice_partner.display_name or ''"/>
                                         </td>
                                     </tr>
 
-                                    <!-- Street -->
                                     <t t-if="invoice_partner.street">
                                         <tr>
                                             <td style="padding:0; margin:0;">
@@ -97,7 +94,6 @@
                                         </tr>
                                     </t>
 
-                                    <!-- Street2 -->
                                     <t t-if="invoice_partner.street2">
                                         <tr>
                                             <td style="padding:0; margin:0;">
@@ -106,7 +102,6 @@
                                         </tr>
                                     </t>
 
-                                    <!-- City, State, Zip -->
                                     <t t-set="parts" t-value="[
                                         invoice_partner.city or '',
                                         invoice_partner.state_id.name if invoice_partner.state_id else '',
@@ -122,7 +117,6 @@
                                         </tr>
                                     </t>
 
-                                    <!-- Phone -->
                                     <t t-if="invoice_partner.phone">
                                         <tr>
                                             <td style="padding:0; margin:0;">
@@ -133,7 +127,6 @@
                                 </table>
                             </td>
 
-                            <!-- NOMOR DO -->
                             <td style="vertical-align: top; width: 20%; text-align: right; font-size: 12pt;">
                                 <t t-esc="doc.name"/>
                             </td>
@@ -152,11 +145,9 @@
                             </td>
                         </tr>
 
-                        <!-- ========== OUTGOING (Customer Shipping Address) ========== -->
                         <t t-if="doc.picking_type_id.code == 'outgoing'">
                             <t t-set="shipping" t-value="doc.partner_id"/>
 
-                            <!-- Nama -->
                             <tr>
                                 <td style="padding:0; margin:0;">
                                     <t t-set="partner_name"
@@ -168,7 +159,6 @@
                                 </td>
                             </tr>
 
-                            <!-- Jalan -->
                             <t t-if="shipping.street">
                                 <tr><td style="padding:0; margin:0;"><t t-esc="shipping.street"/></td></tr>
                             </t>
@@ -177,7 +167,6 @@
                                 <tr><td style="padding:0; margin:0;"><t t-esc="shipping.street2"/></td></tr>
                             </t>
 
-                            <!-- City, State, Zip -->
                             <t t-set="city" t-value="str(shipping.city or '').strip()"/>
                             <t t-set="state" t-value="str(shipping.state_id.name if shipping.state_id else '').strip()"/>
                             <t t-set="zip_code" t-value="str(shipping.zip or '').strip()"/>
@@ -189,13 +178,11 @@
                                 <tr><td style="padding:0; margin:0;"><t t-esc="location"/></td></tr>
                             </t>
 
-                            <!-- Phone -->
                             <t t-if="shipping.phone">
                                 <tr><td style="padding:0; margin:0;">Telp. <t t-esc="shipping.phone"/></td></tr>
                             </t>
                         </t>
 
-                        <!-- ========== NON-OUTGOING (Company Address) ========== -->
                         <t t-else="">
                             <tr><td style="padding:0; margin:0;"><t t-esc="doc.company_id.name"/></td></tr>
 
