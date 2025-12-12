@@ -231,7 +231,7 @@
                     </table>
 
 
-                    <table class="no-border" style="font-size: 12pt; width: 100%;">
+                    <table class="no-border" style="font-size: 11pt; width: 100%;">
                         <tr>
                             <t t-if="invoice.po_customer">
                                 <td style="width:40%;">PO: <t t-esc="invoice.po_customer"/></td>
@@ -410,7 +410,7 @@
 
                     <hr style="border: 0; border-top: 1px solid #000; margin: 3px 0; width:100%;" />
                     <t t-if="invoice.number_to_words">
-                        <div style="font-size: 12pt; ">
+                        <div style="font-size: 11pt; ">
                             <strong>Terbilang:</strong>
                             <t t-esc="invoice.number_to_words"/>
                         </div>
