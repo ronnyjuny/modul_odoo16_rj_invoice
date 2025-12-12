@@ -37,8 +37,8 @@
                     }
                 </style>
 
-                <div class="page" style="font-size: 11pt; line-height: 1.3;">
-                    <table class="no-border" style="font-size: 11pt; width:100%;">
+                <div class="page" style="font-size: 12pt; line-height: 1.3;">
+                    <table class="no-border" style="font-size: 12pt; width:100%;">
                         <tr>
                             <td class="no-border" style="width: 40%; text-align: left;">
                                 <t t-if="doc.company_id.name">
@@ -62,7 +62,7 @@
                         </tr>
                     </table>
                     <hr style="border: 0; border-top: 1px solid #000; margin: 3px 0; width:100%;" />
-                    <table class="no-border" style="font-size: 11pt; width:100%;">
+                    <table class="no-border" style="font-size: 12pt; width:100%;">
                         <tr>
                             <td style="vertical-align: top; width: 80%;">
 
@@ -73,7 +73,7 @@
                                         else doc.partner_id
                                 "/>
 
-                                <table class="no-border" style="font-size: 11pt; width:100%;">
+                                <table class="no-border" style="font-size: 12pt; width:100%;">
                                     <tr>
                                         <td style="padding:0; margin:0;">
                                             <strong>Kepada Yth:</strong>
@@ -133,7 +133,7 @@
                         </tr>
                     </table>
 
-                    <table class="no-border" style="font-size:11pt; width:100%; margin-top:5px;">
+                    <table class="no-border" style="font-size:12pt; width:100%; margin-top:5px;">
                         <tr>
                             <td style="padding:0; margin:0; font-weight:bold;">
                                 <t t-if="doc.picking_type_id.code == 'outgoing'">
@@ -211,7 +211,7 @@
                         </t>
                     </table>
 
-                    <table class="no-border" style="width:100%; font-size:11pt; margin-top:7px;">
+                    <table class="no-border" style="width:100%; font-size:12pt; margin-top:7px;">
                         <tr>
                             <t t-if="doc.po_customer">
                                 <td style="text-align:left; padding:0; margin:0;">
@@ -255,7 +255,7 @@
                         </tr>
                     </table>
 
-                    <table class="table-bordered" style="width:100%; font-size:11pt; border-collapse:collapse; margin-top:6px;" border="1">
+                    <table class="table-bordered" style="width:100%; font-size:12pt; border-collapse:collapse; margin-top:6px;" border="1">
                         <thead>
                             <tr>
                                 <th style="width:5%; text-align:center; padding:4px;">No</th>
@@ -292,7 +292,7 @@
                     </table>
 
                     <t t-if="doc.no_seri or doc.keterangan">
-                        <table style="width:100%; font-size:11pt; border-collapse:collapse; margin-top:5px;" border="1">
+                        <table style="width:100%; font-size:12pt; border-collapse:collapse; margin-top:5px;" border="1">
                             <t t-if="doc.no_seri">
                                 <tr>
                                     <td style="padding:6px; text-align:left;">
@@ -314,7 +314,7 @@
                     </t>
 
                     <t t-if="(doc.no_polisi_id and doc.no_polisi_id.name) or (doc.driver_id and doc.driver_id.name)">
-                        <table class="table-bordered" style="width:100%; font-size:11pt; border-collapse:collapse; margin-top:8px;" border="1">
+                        <table class="table-bordered" style="width:100%; font-size:12pt; border-collapse:collapse; margin-top:8px;" border="1">
                             <tr>
                                 <td style="text-align:left; padding:6px; width:50%;">
                                     <t t-if="doc.no_polisi_id and doc.no_polisi_id.name">
@@ -338,7 +338,7 @@
                         </tr>
                     </table>
 
-                    <table class="no-border" style="width:100%; font-size:11pt;">
+                    <table class="no-border" style="width:100%; font-size:12pt;">
                         <tr>
                             <td style="text-align:center; vertical-align:bottom; width:33%;">
                                 Admin
