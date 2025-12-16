@@ -129,7 +129,7 @@
                                         invoice_partner.city or '',
                                         invoice_partner.state_id.name if invoice_partner.state_id else '',
                                         invoice_partner.zip or '',
-                                        ('\u00A0\u00A0\u00A0\u00A0\u00A0 Telp. %s' % invoice_partner.phone) if invoice_partner.phone else ''
+                                        ('\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0 Telp. %s' % invoice_partner.phone) if invoice_partner.phone else ''
                                     ]"/>
 
                                     <t t-set="clean_parts" t-value="[p for p in parts if p]"/>
@@ -137,7 +137,7 @@
                                     <t t-if="clean_parts">
                                         <tr>
                                             <td style="padding:0; margin:0;">
-                                                <t t-raw="', '.join(clean_parts)"/>
+                                                <t t-raw="' - '.join(clean_parts)"/>
                                             </td>
                                         </tr>
                                     </t>
@@ -189,16 +189,19 @@
                             <t t-set="state" t-value="str(shipping.state_id.name if shipping.state_id else '').strip()"/>
                             <t t-set="zip_code" t-value="str(shipping.zip or '').strip()"/>
 
+                            <t t-set="phone"
+                                t-value="('\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0 Telp. %s' % shipping.phone) if shipping.phone else ''"/>
+
                             <t t-set="location"
-                                t-value="', '.join([str(x) for x in [city, state, zip_code] if x])"/>
+                                t-value="', '.join([str(x) for x in [city, state, zip_code, phone] if x])"/>
 
                             <t t-if="location">
                                 <tr><td style="padding:0; margin:0;"><t t-esc="location"/></td></tr>
                             </t>
 
-                            <t t-if="shipping.phone">
+                            <!-- <t t-if="shipping.phone">
                                 <tr><td style="padding:0; margin:0;">Telp. <t t-esc="shipping.phone"/></td></tr>
-                            </t>
+                            </t> -->
                         </t>
 
                         <t t-else="">
@@ -216,16 +219,19 @@
                             <t t-set="state" t-value="str(doc.company_id.state_id.name if doc.company_id.state_id else '').strip()"/>
                             <t t-set="zip_code" t-value="str(doc.company_id.zip or '').strip()"/>
 
+                            <t t-set="phone"
+                                t-value="('\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0 Telp. %s' % company_id.phone) if company_id.phone else ''"/>
+
                             <t t-set="location"
-                                t-value="' - '.join([str(x) for x in [city, state, zip_code] if x])"/>
+                                t-value="' - '.join([str(x) for x in [city, state, zip_code, phone] if x])"/>
 
                             <t t-if="location">
                                 <tr><td style="padding:0; margin:0;"><t t-esc="location"/></td></tr>
                             </t>
 
-                            <t t-if="doc.company_id.phone">
+                            <!-- <t t-if="doc.company_id.phone">
                                 <tr><td style="padding:0; margin:0;">Telp. <t t-esc="doc.company_id.phone"/></td></tr>
-                            </t>
+                            </t> -->
                         </t>
                     </table>
 
