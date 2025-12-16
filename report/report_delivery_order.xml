@@ -129,7 +129,7 @@
                                         invoice_partner.city or '',
                                         invoice_partner.state_id.name if invoice_partner.state_id else '',
                                         invoice_partner.zip or '',
-                                        ('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Telp. %s' % invoice_partner.phone) if invoice_partner.phone else ''
+                                        ('      Telp. %s' % invoice_partner.phone) if invoice_partner.phone else ''
                                     ]"/>
 
                                     <t t-set="clean_parts" t-value="[p for p in parts if p]"/>
