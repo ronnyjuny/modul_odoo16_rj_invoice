@@ -29,17 +29,19 @@
                 </style>
 
                 <div class="page" style="font-size: 12pt; line-height: 1.3;">
-
+                    <!-- ===================== HEADER ===================== -->
                     <table class="no-border" style="font-size: 12pt;">
                         <tr>
                             <td class="no-border" style="width: 60%;">
 
+                                <!-- Nama Perusahaan -->
                                 <t t-if="invoice.company_id.name">
                                     <div style="font-size: 13pt;">
                                         <strong><t t-esc="invoice.company_id.name"/></strong>
                                     </div>
                                 </t>
 
+                                <!-- Alamat -->
                                 <t t-if="invoice.company_id.street">
                                     <div><t t-esc="invoice.company_id.street"/></div>
                                 </t>
@@ -47,6 +49,7 @@
                                     <div><t t-esc="invoice.company_id.street2"/></div>
                                 </t>
 
+                                <!-- Kota + Provinsi -->
                                 <t t-if="invoice.company_id.city or invoice.company_id.state_id">
                                     <div>
                                         <t t-esc="'{}, {}'.format(invoice.company_id.city or '', invoice.company_id.state_id.name or '')"/>
@@ -62,13 +65,15 @@
 
                                 <t t-if="invoice.company_id.name == 'PT. TEGUH PRIMA SENTOSA'">
 
+                                    <!-- Samarinda -->
                                     <t t-if="order_type == 'Samarinda'">
                                         <div>
                                             <span>Telp: 0813-5097-1228</span>
                                             <span style="float:right;">Email: adminsalessmd@teguhprimasentosa.com</span>
                                         </div>
                                     </t>
-->
+
+                                    <!-- Balikpapan -->
                                     <t t-elif="order_type == 'Balikpapan'">
                                         <div>
                                             <span>Telp: 0812-5775-9989</span>
@@ -76,6 +81,7 @@
                                         </div>
                                     </t>
 
+                                    <!-- Malinau -->
                                     <t t-elif="order_type == 'Malinau'">
                                         <div>
                                             <span>Telp: 081349498127</span>
@@ -83,6 +89,7 @@
                                         </div>
                                     </t>
 
+                                    <!-- Tarakan -->
                                     <t t-elif="order_type == 'Tarakan'">
                                         <div>
                                             <span>Telp: 081349498127</span>
@@ -90,6 +97,7 @@
                                         </div>
                                     </t>
 
+                                    <!-- Default -->
                                     <t t-else="">
                                         <div>
                                             <span>Telp: <t t-esc="invoice.company_id.phone or ''"/></span>
@@ -111,16 +119,17 @@
                                         <div>Email: <t t-esc="invoice.company_id.email"/></div>
                                     </t>
                                 </t>
+
                             </td>
 
-                            <td class="no-border" style="width: 40%; vertical-align: top; text-align: right;">
-
+                            <td class="no-border" style="width: 40%; vertical-align: top; text-align: right;">                                
+                                <!-- Nomor Sequence -->
                                 <t t-if="invoice.custom_sequence">
                                     <div style="font-size: 14pt;">
                                     <strong>No. Seq:  <t t-esc="invoice.custom_sequence"/> </strong>
                                     </div>
                                 </t>
-
+                                <!-- No Invoice -->
                                 <t t-if="invoice.name">
                                     <div style="font-size: 12pt;">
                                         <t t-esc="invoice.name"/>
@@ -138,7 +147,7 @@
                                         /  Due Date: <t t-esc="invoice.invoice_date_due.strftime('%d/%m/%Y')"/>
                                     </div>
                                 </t>
-
+                                <!-- Order Type -->
                                 <t t-if="
                                     invoice.invoice_line_ids 
                                     and invoice.invoice_line_ids[0].sale_line_ids 
@@ -275,7 +284,7 @@
                                             <t t-esc="'{:,}'.format(int(line.subtotal or 0)).replace(',', '.')"/>
                                         </td>
                                     </tr>
-
+                                    <!-- Note lines -->
                                     <t t-foreach="invoice.invoice_line_ids.filtered(lambda l: not l.product_id and l.sequence == line.sequence + 1)" t-as="note">
                                         <tr>
                                             <td colspan="6" style="font-style:italic; padding-left:10px;">
@@ -377,6 +386,28 @@
                             </td>
                         </tr>
                     </table>
+                    <!-- <div style="font-size: 12pt;">
+                        <t t-if="invoice.narration">
+                            <div style="margin-bottom: 5px;">
+                                <span t-raw="invoice.narration"/>
+                            </div>
+                        </t>
+                        <t t-if="invoice.no_seri">
+                            <tr>
+                                <td colspan="6">
+                                    NO. SERI: <t t-esc="invoice.no_seri"/>
+                                </td>
+                            </tr>
+                        </t>
+
+                        <t t-if="invoice.keterangan">
+                            <tr>
+                                <td colspan="6">
+                                    KETERANGAN: <t t-esc="invoice.keterangan"/>
+                                </td>
+                            </tr>
+                        </t>
+                    </div> -->
 
                     <hr style="border: 0; border-top: 1px solid #000; margin: 3px 0; width:100%;" />
                     <t t-if="invoice.number_to_words">
