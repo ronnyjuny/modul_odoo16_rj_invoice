@@ -206,7 +206,7 @@
                                         </tr>
                                     </t>
 
-                                    <t t-if="invoice.partner_id.phone">
+                                    <!-- <t t-if="invoice.partner_id.phone">
                                         <tr>
                                             <td style="padding:0; margin:0;">
                                                 Telp. <t t-esc="invoice.partner_id.phone"/>
@@ -220,7 +220,23 @@
                                                 NPWP: <t t-esc="invoice.partner_id.vat"/>
                                             </td>
                                         </tr>
+                                    </t> -->
+
+                                    <t t-if="invoice.partner_id.phone or invoice.partner_id.vat">
+                                        <tr>
+                                            <td style="padding:0; margin:0; text-align:left; width:50%;">
+                                                <t t-if="invoice.partner_id.phone">
+                                                    Telp. <t t-esc="invoice.partner_id.phone"/>
+                                                </t>
+                                            </td>
+                                            <td style="padding:0; margin:0; text-align:right; width:50%;">
+                                                <t t-if="invoice.partner_id.vat">
+                                                    NPWP: <t t-esc="invoice.partner_id.vat"/>
+                                                </t>
+                                            </td>
+                                        </tr>
                                     </t>
+
                                 </table>
 
                             </td>
